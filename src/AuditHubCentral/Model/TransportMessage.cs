@@ -25,6 +25,7 @@ namespace AuditHubCentral.Model
         public byte[] Body { get; set; }
         public BsonDocument DeserializedBody { get; set; }
         public string Label { get; set; }
+        public DateTime? CopyTime { get; set; }
 
 
         public string GetBodyTextOrNull()

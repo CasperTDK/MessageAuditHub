@@ -12,6 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{7070B5
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migration", "migration", "{4B72ACF9-B062-43D7-8C3D-8AC7E6327747}"
+	ProjectSection(SolutionItems) = preProject
+		..\scripts\migration\readme.txt = ..\scripts\migration\readme.txt
+		..\scripts\migration\update.js = ..\scripts\migration\update.js
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

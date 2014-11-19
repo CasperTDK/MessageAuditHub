@@ -1,0 +1,47 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <SolutionDir Condition="$(SolutionDir) == ''">..\src</SolutionDir>
+    <Configuration Condition="$(Configuration) == ''">Debug</Configuration>
+
+    <DeployDir>..\deploy</DeployDir>
+
+    <AuditHubCentralServiceDir>$(SolutionDir)\AuditHubCentral</AuditHubCentralServiceDir>
+    <AuditHubCentralOutputDit>$(SolutionDir)\AuditHubCentral\bin\$(Configuration)</AuditHubCentralOutputDit>
+    <AuditHubCentralDeployDir>$(DeployDir)\$(Configuration)\AuditHubCentral</AuditHubCentralDeployDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AuditHubCentralServiceProjects Include="$(AuditHubCentralServiceDir)\AuditHubCentral.csproj"/>
+  </ItemGroup>
+
+  <Target Name="buildTeamcity">
+    <MSBuild Projects="build.proj" Targets="build" Properties="Configuration=Debug"/>
+  </Target>
+
+  <Target Name="buildTest">
+    <MSBuild Projects="@(AuditHubCentralServiceTestProjects)"/>
+  </Target>
+  
+  <Target Name="build" DependsOnTargets="verifyConfiguration;buildAuditHubCentralService"/>
+  
+  <Target Name="verifyConfiguration">
+    <Error Text="Valid configurations are: Debug, Test, Release"
+           Condition="$(Configuration) != 'debug' and $(Configuration) != 'test' and $(Configuration) != 'release'"/>
+  </Target>
+  
+  <Target Name="buildAuditHubCentralService">
+    <Message Text="Building AuditHub Service in configuration = $(Configuration)" Importance="high"/>
+    
+    <RemoveDir Directories="$(DeployDir)\$(Configuration)" ContinueOnError="true"/>
+    
+    <MSBuild Projects="@(AuditHubCentralServiceProjects)"  StopOnFirstFailure="true" Properties="Configuration=$(Configuration)"/>
+
+    <ItemGroup>
+      <AuditHubCentralServiceBins Include="$(AuditHubCentralOutputDit)\*.exe"/>
+      <AuditHubCentralServiceBins Include="$(AuditHubCentralOutputDit)\*.dll"/>
+      <AuditHubCentralServiceBins Include="$(AuditHubCentralOutputDit)\*.config"/>
+    </ItemGroup>
+    
+    <Copy SourceFiles="@(AuditHubCentralServiceBins)" DestinationFolder="$(AuditHubCentralDeployDir)"/>
+  </Target>
+</Project>

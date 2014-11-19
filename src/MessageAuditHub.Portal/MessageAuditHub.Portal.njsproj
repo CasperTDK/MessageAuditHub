@@ -30,12 +30,18 @@
     <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="controllers\index.js" />
+    <Compile Include="controllers\messagesController.js" />
+    <Compile Include="data\index.js" />
     <Compile Include="server.js" />
+    <Compile Include="data\database.js" />
+    <Compile Include="data\messages.js" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="routes\" />
+    <Folder Include="data\" />
+    <Folder Include="controllers\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>

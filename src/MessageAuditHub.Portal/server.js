@@ -1,6 +1,14 @@
 ﻿var http = require('http');
+var express = require('express');
+var app = express();
+
+var mongo = require("mongodb");
+
 var port = process.env.port || 1337;
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+var controllers = require("./controllers");
+
+controllers.init(app);
+
+
+var server = http.createServer(app);
+server.listen(port);

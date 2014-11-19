@@ -111,3 +111,6 @@ packages/
 *.orig
 
 .localhistory
+
+#node
+node_modules/

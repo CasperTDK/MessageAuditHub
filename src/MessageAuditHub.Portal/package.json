@@ -6,5 +6,9 @@
   "author": {
     "name": "jbm",
     "email": ""
+  },
+  "dependencies": {
+    "express": "^4.10.2",
+    "mongodb": "^1.4.20"
   }
 }

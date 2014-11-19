@@ -114,3 +114,6 @@ packages/
 
 #node
 node_modules/
+
+#bower
+lib/

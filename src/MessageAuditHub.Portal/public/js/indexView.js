@@ -13,12 +13,13 @@
                 .success(function (data) {
                         $scope.messages = _(data).map(function(message) {
                             return {
-                                downloadTime: new Date(message.DownloadTime),
-                                copyTime: new Date(message.Headers["rebus-audit-copy-time"]),
+                                downloadTime: message.DownloadTime,
+                                copyTime: message.AuditCopyTime,
                                 label: message.Label
                             };
                         });
-
+                        
+                    /*
                     var min = _($scope.messages).min(function(message) {
                         return message.downloadTime;
                     }).copyTime;
@@ -27,8 +28,8 @@
                             return message.downloadTime;
                         }).copyTime;
 
-                    $scope.TotalTimeSpend = (max.getTime() - min.getTime()) / 1000;
-                    
+                    $scope.TotalTimeSpend = (max - min);
+                    */
                 });
 
             };

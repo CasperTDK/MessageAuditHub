@@ -2,6 +2,8 @@
   "name": "MessageAuditHub.Portal",
   "version": "1.0.0",
   "dependencies": {
-    "angular-bootstrap": "~0.12.0"
+    "angular-bootstrap": "~0.12.0",
+    "angular-sanitize": "~1.3.3",
+    "underscore": "~1.7.0"
   }
 }

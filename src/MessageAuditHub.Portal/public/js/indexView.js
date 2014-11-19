@@ -7,14 +7,14 @@
             $scope.correlationId = '';
             
             $scope.findMessages = function () {
-                var param = $sanitize($scope.correlationId);
-                param = param.replace("#", "å");
+                
+                var param = encodeURIComponent($scope.correlationId);
                 $http.get('http://localhost:1337/messages/getByCorrelationId/' + param)
                 .success(function (data) {
                         $scope.messages = _(data).map(function(message) {
                             return {
                                 downloadTime: new Date(message.DownloadTime),
-                                copyTime: new Date(message.Headers['rebus-audit-copy-time']),
+                                copyTime: new Date(message.Headers["rebus-audit-copy-time"]),
                                 label: message.Label
                             };
                         });

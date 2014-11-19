@@ -4,7 +4,7 @@
 
     messagesController.init = function(app) {
         app.get("/messages/getByCorrelationId/:correlationId", function (req, res) {
-            var correlationId = req.params.correlationId.replace('å', '#');
+            var correlationId = decodeURIComponent(req.params.correlationId);
             
             console.log('received request for messages with correlation id ' + correlationId);
 

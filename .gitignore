@@ -114,6 +114,7 @@ packages/
 
 #node
 node_modules/
+.ntvs_analysis.dat
 
 #bower
 lib/

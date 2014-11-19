@@ -36,12 +36,15 @@
     <Compile Include="server.js" />
     <Compile Include="data\database.js" />
     <Compile Include="data\messages.js" />
+    <Content Include=".bowerrc" />
     <Content Include="package.json" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="data\" />
     <Folder Include="controllers\" />
+    <Folder Include="public\" />
+    <Folder Include="public\lib\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>

@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="utf-8" />
+        <title>Message audit hub
+        </title>
+    </head>
+    <body ng-app="messageAuditModule">
+        <div ng-controller="homeViewController">
+
+            <input type="text" ng-model="correlationId" />
+            <button ng-click="findMessages()" name="Find">Search</button>
+
+            <div ng-repeat="message in messages">
+                {{message.copyTime}}
+                <br />
+                {{message.label}}
+            </div>
+            <div ng-show="messages.length > 0">
+                Total seconds spend {{TotalTimeSpend}}
+            </div>
+        </div>
+        <scripts>
+            <script src="/lib/angular/angular.js"> </script>
+            <script src="/lib/angular-sanitize/angular-sanitize.js"> </script>
+            <script src="/lib/underscore/underscore.js"> </script>
+            <script src="/js/indexView.js"> </script>
+
+        </scripts>
+    </body>
+</html> 

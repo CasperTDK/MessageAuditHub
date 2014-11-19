@@ -1,0 +1,7 @@
+{
+  "name": "MessageAuditHub.Portal",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular-bootstrap": "~0.12.0"
+  }
+}

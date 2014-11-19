@@ -33,11 +33,27 @@
     <Compile Include="controllers\index.js" />
     <Compile Include="controllers\messagesController.js" />
     <Compile Include="data\index.js" />
+    <Compile Include="public\lib\angular-bootstrap\ui-bootstrap-tpls.js" />
+    <Compile Include="public\lib\angular-bootstrap\ui-bootstrap-tpls.min.js" />
+    <Compile Include="public\lib\angular-bootstrap\ui-bootstrap.js" />
+    <Compile Include="public\lib\angular-bootstrap\ui-bootstrap.min.js" />
+    <Compile Include="public\lib\angular\angular.js" />
+    <Compile Include="public\lib\angular\angular.min.js" />
     <Compile Include="server.js" />
     <Compile Include="data\database.js" />
     <Compile Include="data\messages.js" />
     <Content Include=".bowerrc" />
+    <Content Include="bower.json" />
     <Content Include="package.json" />
+    <Content Include="public\lib\angular-bootstrap\.bower.json" />
+    <Content Include="public\lib\angular-bootstrap\bower.json" />
+    <Content Include="public\lib\angular\.bower.json" />
+    <Content Include="public\lib\angular\angular-csp.css" />
+    <Content Include="public\lib\angular\angular.min.js.gzip" />
+    <Content Include="public\lib\angular\angular.min.js.map" />
+    <Content Include="public\lib\angular\bower.json" />
+    <Content Include="public\lib\angular\package.json" />
+    <Content Include="public\lib\angular\README.md" />
     <Content Include="README.md" />
   </ItemGroup>
   <ItemGroup>
@@ -45,6 +61,8 @@
     <Folder Include="controllers\" />
     <Folder Include="public\" />
     <Folder Include="public\lib\" />
+    <Folder Include="public\lib\angular-bootstrap\" />
+    <Folder Include="public\lib\angular\" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
   <ProjectExtensions>

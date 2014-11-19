@@ -1,0 +1,10 @@
+{
+  "name": "MessageAuditHub.Portal",
+  "version": "0.0.0",
+  "description": "MessageAuditHub.Portal",
+  "main": "server.js",
+  "author": {
+    "name": "jbm",
+    "email": ""
+  }
+}

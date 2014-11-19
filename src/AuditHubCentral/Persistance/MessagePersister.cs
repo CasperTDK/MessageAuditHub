@@ -59,21 +59,27 @@ namespace AuditHubCentral.Persistance
                     Label = message.Label,
                     DeserializedBody = TryDeserialize(message),
                     CorrelationId = message.Headers.GetHeaderValueOrDefault(Headers.CorrelationId),
+                    CopyTime = TryGetCopyTime(message.Headers.GetHeaderValueOrDefault(Headers.AuditMessageCopyTime))
                 };
 
                 collection.Save(doc);
 
-                Log.InfoFormat("Message of type {0} saved as {1} => {2}", label, doc.Id, typeof(TransportMessage).Name);
+                Log.InfoFormat("Message of type {0} saved as {1} => {2}", label, doc.Id, typeof (TransportMessage).Name);
             }
             catch (Exception e)
             {
-                Log.WarnFormat(
-                    "An error occurred while attempting to save message of type {0} in {1}!: {2}", label, typeof(TransportMessage).Name, e);
+                Log.WarnFormat("An error occurred while attempting to save message of type {0} in {1}!: {2}", label, typeof (TransportMessage).Name, e);
                 throw;
             }
         }
 
-       
+        private DateTime? TryGetCopyTime(string auditMessageCopyTime)
+        {
+            DateTime result;
+            var parsed = DateTime.TryParse(auditMessageCopyTime, out result);
+            return parsed ? (DateTime?) result : null;
+        }
+
 
         private BsonDocument TryDeserialize(ReceivedTransportMessage receivedTransportMessage)
         {

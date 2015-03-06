@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace AuditHubCentral.Model
 {
+    [BsonIgnoreExtraElements]
     public class TransportMessage
     {
         public TransportMessage()

@@ -45,6 +45,7 @@ namespace AuditHubCentral.Installers
             var msmqMessageReceiver = new MsmqMessageReceiver(inputQueue, message => persister.HandleAuditMessage(message));
             msmqMessageReceiver.Start();
 
+
         }
     }
 }

@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "MessageAuditHub.Portal", "MessageAuditHub.Portal\MessageAuditHub.Portal.njsproj", "{846EFD34-0C6F-4AEF-9717-0A81932E25D9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuditHubCentral", "AuditHubCentral\AuditHubCentral.csproj", "{058F58C9-E5DA-4D52-85AE-E6E174C4D342}"
@@ -17,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "migration", "migration", "{
 		..\scripts\migration\readme.txt = ..\scripts\migration\readme.txt
 		..\scripts\migration\update.js = ..\scripts\migration\update.js
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReIndexer", "ReIndexer\ReIndexer.csproj", "{48D86BDB-7345-4BAE-B6D6-98526070B161}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,12 @@ Global
 		{058F58C9-E5DA-4D52-85AE-E6E174C4D342}.Release|Any CPU.Build.0 = Release|Any CPU
 		{058F58C9-E5DA-4D52-85AE-E6E174C4D342}.Test|Any CPU.ActiveCfg = Test|Any CPU
 		{058F58C9-E5DA-4D52-85AE-E6E174C4D342}.Test|Any CPU.Build.0 = Test|Any CPU
+		{48D86BDB-7345-4BAE-B6D6-98526070B161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48D86BDB-7345-4BAE-B6D6-98526070B161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48D86BDB-7345-4BAE-B6D6-98526070B161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48D86BDB-7345-4BAE-B6D6-98526070B161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48D86BDB-7345-4BAE-B6D6-98526070B161}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{48D86BDB-7345-4BAE-B6D6-98526070B161}.Test|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

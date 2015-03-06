@@ -6,6 +6,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using DC.WindowsService;
 using MongoDB.Driver;
+using MongoDB.Driver.Builders;
 
 namespace AuditHubCentral.Installers
 {
@@ -23,6 +24,14 @@ namespace AuditHubCentral.Installers
 
             container.Register(Component.For<MongoDatabase>().Instance(database));
             container.Register(CollectionComponent<TransportMessage>("messageAudit"));
+
+            var messageAudit = container.Resolve<MongoCollection<TransportMessage>>();
+            messageAudit.CreateIndex(new IndexKeysBuilder().Ascending("From"));
+            messageAudit.CreateIndex(new IndexKeysBuilder().Ascending("To"));
+            messageAudit.CreateIndex(new IndexKeysBuilder().Ascending("Label"));
+            messageAudit.CreateIndex(new IndexKeysBuilder().Ascending("CorrelationId"));
+            messageAudit.CreateIndex(new IndexKeysBuilder().Ascending("CopyTime"));
+            messageAudit.CreateIndex(new IndexKeysBuilder().Text("DeserializedBody"));
 
         }
 
